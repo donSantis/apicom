@@ -1,37 +1,74 @@
-<nav class="header navbar  navbar-white navbar-light">
-    <!-- Left navbar links -->
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top" aria-label="Sixth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Expand at xl</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06"
+                aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown user-menu">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
-                     class="user-image img-circle elevation-2" alt="User Image">
-                <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <!-- User image -->
-                <li class="user-header bg-primary">
-                    <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
-                         class="img-circle elevation-2"
-                         alt="User Image">
-                    <p>
-                        {{ Auth::user()->name }}
-                        <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
-                    </p>
+        <div class="collapse navbar-collapse" id="navbarsExample06">
+            <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-bs-toggle="dropdown"
+                       aria-expanded="false">Dropdown</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown06">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
                 </li>
-                <!-- Menu Footer-->
-                <li class="user-footer">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    <a href="#" class="btn btn-default btn-flat float-right"
-                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        Sign out
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
+                <li>
+                    <form>
+                        <div class="input-group ">
+                        <span class="input-group-text" id="basic-addon1">
+                           <i class="bi bi-search"></i>
+                         </span>
+                            <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                        </div>
                     </form>
                 </li>
             </ul>
-        </li>
-    </ul>
+
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categoria 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categoria 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categoria 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categoria 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categoria 5</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categoria 6</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categoria 7</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categoria 8</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>

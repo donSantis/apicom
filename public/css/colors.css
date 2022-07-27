@@ -1,0 +1,55 @@
+
+/* COLORES  */
+/* COLORES BACKGROUND */
+.rojo{
+    background-color: #FF637D;
+}
+.palido{
+    background-color:#F4F1BB ;
+}
+.verde {
+    background-color: #66D7D1;
+}
+
+.blanco {
+    background-color: #EAF2E3;
+}
+.amarillo{
+    background-color:#FFF87F;
+}
+
+.azul{
+    background-color:#61718A;
+}
+
+/* COLORES  */
+.color-rojo{
+    color: #FF637D;
+}
+.color-palido{
+    color:#F4F1BB ;
+}
+.color-verde {
+    color: #66D7D1;
+}
+
+.color-blanco {
+    color: #EAF2E3;
+}
+.color-amarillo{
+    color:#FFF87F;
+}
+.color-grey{
+    color: #212121;
+}
+.color-fb{
+    color: #3b5998;
+}
+.color-wsp{
+    color: #25D366;
+}
+
+.color-ig {
+    color: #8134AF;
+
+}
