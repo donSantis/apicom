@@ -1,0 +1,31 @@
+
+<!-- COLORES -->
+.rojo{
+    background-color: #FF637D;
+}
+.palido{
+    background-color:#F4F1BB ;
+}
+.verde {
+    background-color: #66D7D1;
+}
+
+.blanco {
+    background-color: #EAF2E3;
+}
+.amarillo{
+    background-color:#FFF87F;
+}
+
+
+.footer ul{
+    padding: 53px 53px 53px 53px;
+
+}
+
+.title-footer{
+    padding-bottom: 150px;
+    font-size: 15px;
+}
+
+
