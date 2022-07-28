@@ -13,7 +13,7 @@ use Response;
 class ProductController extends AppBaseController
 {
     /** @var ProductRepository $productRepository*/
-    private $productRepository;
+    public $productRepository;
 
     public function __construct(ProductRepository $productRepo)
     {
