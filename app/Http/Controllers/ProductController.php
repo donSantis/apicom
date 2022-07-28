@@ -7,7 +7,9 @@ use App\Http\Requests\UpdateProductRequest;
 use App\Repositories\ProductRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use App\Models\Product;
 use Flash;
+use Illuminate\Support\Facades\DB;
 use Response;
 
 class ProductController extends AppBaseController
@@ -33,6 +35,31 @@ class ProductController extends AppBaseController
 
         return view('products.index')
             ->with('products', $products);
+    }
+
+    public function index2(Request $request)
+    {
+        $products = $this->productRepository->all();
+        $products2 = $this->productRepository->all();
+
+        return view('welcome', [
+            'products' => $products,
+            'products2' => $products2,
+
+        ]);
+    }
+
+    public function index3(Request $request)
+    {
+
+        $products = DB::table('product')->get();
+        $products2 = DB::table('product')
+            ->where('id_category', '=', 1)
+            ->get();
+        return view('welcome', [
+            'products' => $products,
+            'products2' => $products2,
+        ]);
     }
 
     /**

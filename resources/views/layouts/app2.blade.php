@@ -54,6 +54,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="{{ asset('js/banners.js') }}" defer></script>
+<script src="{{ asset('js/card-product.js') }}" defer></script>
+
 
 <script>
     $(function () {
