@@ -11,7 +11,7 @@
         <div class="product" data-name="p-2">
             <img src="img/3.jpg" alt="">
             <h3>Product name</h3>
-            <div class="price"> $11.990</div>
+            <div class="price"> $211.990</div>
         </div>
 
         <div class="product" data-name="p-3">
