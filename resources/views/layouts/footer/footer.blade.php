@@ -34,9 +34,9 @@
 
         <div class="col-5">
             <div class="row">
-                <ul class="col-5">
+                <ul class="col-5" style="list-style: none;">
                     <strong>
-                        <span class="title-footer ">Redes sociales</span>
+                        <span class="title-footer" >Redes sociales</span>
                     </strong>
                     <li class="pt-3">
                         <a href="#"><i class="bi bi-instagram icon-red-social color-ig"></i></a>
@@ -45,9 +45,9 @@
                     </li>
 
                 </ul>
-                <ul class="col-7">
+                <ul class="col-7" style="list-style: none;">
                     <strong>
-                        <span class="title-footer ">Formas de pago</span>
+                        <span class="title-footer " >Formas de pago</span>
                     </strong>
                     <a href="#">
                         <img class="pt-3" src="img/logo-webpay.png" alt="logo-webpay">
@@ -55,7 +55,7 @@
                 </ul>
             </div>
             <div class="row">
-                <ul>
+                <ul  style="list-style: none;">
                     <strong>
                         <span class="title-footer">Subscribirse</span>
                     </strong>

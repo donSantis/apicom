@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top" aria-label="Sixth navbar example">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Expand at xl</a>
+        <a class="navbar-brand" href="#">Ecommerce</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06"
                 aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
