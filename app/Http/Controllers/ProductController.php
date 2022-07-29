@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Repositories\ProductRepository;
+use App\Repositories\CategoryRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -17,9 +18,11 @@ class ProductController extends AppBaseController
     /** @var ProductRepository $productRepository*/
     public $productRepository;
 
-    public function __construct(ProductRepository $productRepo)
+    public function __construct(ProductRepository $productRepo,
+                                CategoryRepository $categoryRepo)
     {
         $this->productRepository = $productRepo;
+        $this->categoryRepository = $categoryRepo;
     }
 
     /**
@@ -41,11 +44,12 @@ class ProductController extends AppBaseController
     {
         $products = $this->productRepository->all();
         $products2 = $this->productRepository->all();
+        $categories = $this->categoryRepository->all();
 
         return view('welcome', [
             'products' => $products,
             'products2' => $products2,
-
+            'categories' => $categories,
         ]);
     }
 
