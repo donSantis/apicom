@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Gender extends Migration
+class Brand extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,10 @@ class Gender extends Migration
      * @return void
      */
     public function up(){
-            Schema::create('gender', function (Blueprint $table) {
+            Schema::create('brand', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('image');
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });

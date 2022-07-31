@@ -41,3 +41,6 @@ Route::resource('subscriptions', App\Http\Controllers\SubscriptionController::cl
 
 
 Route::resource('users', App\Http\Controllers\UsersController::class);
+
+
+Route::resource('brands', App\Http\Controllers\BrandController::class);

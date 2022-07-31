@@ -18,7 +18,8 @@ class Product extends Migration
             $table->unsignedBigInteger('id_category')->nullable();
             $table->unsignedBigInteger('id_size')->nullable();
             $table->unsignedBigInteger('id_color')->nullable();
-            $table->unsignedBigInteger('id_genders')->nullable();
+            $table->unsignedBigInteger('id_gender')->nullable();
+            $table->unsignedBigInteger('id_brand')->nullable();
             $table->string('sku');
             $table->string('title');
             $table->string('description');
@@ -34,7 +35,8 @@ class Product extends Migration
             $table->foreign('id_category')->references('id')->on('category');
             $table->foreign('id_size')->references('id')->on('size');
             $table->foreign('id_color')->references('id')->on('color');
-            $table->foreign('id_genders')->references('id')->on('genders');
+            $table->foreign('id_gender')->references('id')->on('gender');
+            $table->foreign('id_brand')->references('id')->on('brand');
         });
     }
     /**
