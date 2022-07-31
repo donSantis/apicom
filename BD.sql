@@ -112,6 +112,8 @@ subsciption
 
     php artisan infyom:rollback category scaffold
 
+    php artisan infyom:rollback gender scaffold
+
     php artisan infyom:rollback city scaffold
 
     php artisan infyom:rollback size scaffold
@@ -136,6 +138,8 @@ subsciption
         php artisan infyom:scaffold Category --fromTable --tableName=category --primary=id
 
         php artisan infyom:scaffold Size --fromTable --tableName=size --primary=id
+
+        php artisan infyom:scaffold Gender --fromTable --tableName=gender --primary=id
 
         php artisan infyom:scaffold City --fromTable --tableName=city --primary=id
 
