@@ -17,7 +17,7 @@
     </div>
 
     <!-- Main Footer -->
-    @include('layouts.footer.footer')
+    @include('layouts.footer.footer2')
 </div>
 
 
@@ -61,7 +61,6 @@
 
     $(document).redy(function(){
 
-        var url = "<?php echo RUTA_URL;?>/layouts/carrito/agregar"
 
         $.ajax({
             url: url,

@@ -6,7 +6,7 @@
 
             @foreach($products2 as $p2)
                 <div class="swiper-slide">
-                    <div class="card mt-3" style="width: 18rem;">
+                    <div class="card mt-3"  style="width: 18rem;">
                         <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
                             {{ csrf_field() }}
@@ -16,8 +16,11 @@
                             <p class="card-text">{{     $p2->description }}</p>
                             <p class="card-text">{{     $p2->idCategory->title }}</p>
                             <p class="card-text">{{     $p2->idColor->title }}</p>
-                            
-                            <button type="submit"  class="btn btn-success btn-flat btn-sm ">Añadir Producto</button>
+                            <a href="{{ route('show.product', [$p2->id]) }}"> UWU</a>
+
+
+
+                            <button type="submit"   class="btn btn-success btn-flat btn-sm ">Añadir Producto</button>
 
 
 
@@ -37,7 +40,7 @@
 
 </form>
 
-      
+
 </div>
 
 

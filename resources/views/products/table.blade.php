@@ -39,6 +39,7 @@
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
                         </a>
+
                         <a href="{{ route('products.edit', [$product->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>

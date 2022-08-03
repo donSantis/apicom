@@ -26,7 +26,7 @@ class ProductController extends AppBaseController
     /**
      * Display a listing of the Product.
      *
-     * @param Request $request 
+     * @param Request $request
      *
      * @return Response
      */
@@ -97,6 +97,24 @@ class ProductController extends AppBaseController
         }
 
         return view('products.show')->with('product', $product);
+    }
+
+    public function showProduct($id)
+    {
+        $product = $this->productRepository->find($id);
+
+        if (empty($product)) {
+            Flash::error('Product not found');
+
+            return redirect(route('home'));
+        }
+
+        $categories = $this->categoryRepository->all();
+
+        return view('products.show-product', [
+            'product' => $product,
+            'categories' => $categories
+        ]);
     }
 
     /**

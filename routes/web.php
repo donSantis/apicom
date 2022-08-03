@@ -18,7 +18,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::get('show-product/{id}', [App\Http\Controllers\ProductController::class, 'showProduct'])->name('show.product');
 Route::resource('roles', App\Http\Controllers\RoleController::class);
 
 

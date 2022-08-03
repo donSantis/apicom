@@ -43,9 +43,9 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/colors.css">
-    <link rel="stylesheet" href="css/card-product.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/card-product.css">
     @stack('third_party_stylesheets')
 
     @stack('page_css')
