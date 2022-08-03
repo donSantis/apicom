@@ -1,6 +1,7 @@
 @extends('layouts.app2')
 
 @section('content')
+    @include('layouts.carrito.carritomodal')
     @include('carouseles.banner1')
     @include('carouseles.products2')
     <div class="amarillo py-5" style="height: 500px">

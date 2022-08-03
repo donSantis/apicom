@@ -47,8 +47,7 @@ class ProductController extends AppBaseController
         return view('welcome', [
             'products' => $products,
             'products2' => $products2,
-
-            'categories' => $categories,
+            'categories' => $categories
         ]);
     }
 
@@ -170,4 +169,5 @@ class ProductController extends AppBaseController
 
         return redirect(route('products.index'));
     }
+
 }

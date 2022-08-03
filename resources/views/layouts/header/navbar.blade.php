@@ -10,7 +10,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-xl-0">
                 
                 <li>
-                    <form style="height: 50px; padding-top: 15px;padding-left: 100px;">
+                    <form style="padding-left: 100px;padding-top: 5px;">
                         <div class="input-group h-100">
                         <span class="input-group-text" id="basic-addon1">
                            <i class="bi bi-search"></i>
@@ -19,7 +19,13 @@
                         </div>
                     </form>
                 </li>
+
+                <li style="padding-left: 50px;">
+                    <a data-bs-toggle="modal" data-bs-target="#exampleModal"  style="font-size: 30px; color: white;" href="#"><i class="bi bi-bag-heart"></i></a>
+                </li>
+
             </ul>
+          
 
         </div>
 

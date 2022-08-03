@@ -58,6 +58,25 @@
 
 
 <script>
+
+    $(document).redy(function(){
+
+        var url = "<?php echo RUTA_URL;?>/layouts/carrito/agregar"
+
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: {
+
+            },
+        })
+
+
+
+    });
+
+
+
     $(function () {
         bsCustomFileInput.init();
     });

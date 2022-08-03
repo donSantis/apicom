@@ -2,12 +2,11 @@
     <table class="table" id="products-table">
         <thead>
         <tr>
-            <th>Id User</th>
-        <th>Id Category</th>
-        <th>Id Size</th>
-        <th>Id Color</th>
-        <th>Id Gender</th>
-        <th>Id Brand</th>
+        <th>Category</th>
+        <th>Size</th>
+        <th>Color</th>
+        <th>Gender</th>
+        <th>Brand</th>
         <th>Sku</th>
         <th>Title</th>
         <th>Description</th>
@@ -21,12 +20,11 @@
         <tbody>
         @foreach($products as $product)
             <tr>
-                <td>{{ $product->id_user }}</td>
-            <td>{{ $product->id_category }}</td>
-            <td>{{ $product->id_size }}</td>
-            <td>{{ $product->id_color }}</td>
+            <td>{{ $product->idCategory->title }}</td>
+            <td>{{ $product->idSize->title }}</td>
+            <td>{{ $product->idColor->title }}</td>
             <td>{{ $product->id_gender }}</td>
-            <td>{{ $product->id_brand }}</td>
+            <td>{{ $product->idBrand->title }}</td>
             <td>{{ $product->sku }}</td>
             <td>{{ $product->title }}</td>
             <td>{{ $product->description }}</td>

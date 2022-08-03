@@ -44,3 +44,8 @@ Route::resource('users', App\Http\Controllers\UsersController::class);
 
 
 Route::resource('brands', App\Http\Controllers\BrandController::class);
+
+Route::resource('cart', App\Http\Controllers\CartController::class);
+
+Route::post('/cart/agregar', 'CartController@agregar');
+

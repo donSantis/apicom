@@ -74,3 +74,68 @@ body {
 }
 
 
+
+
+
+
+
+
+
+
+/* MODALES */
+
+
+ .modal-right .modal-dialog {
+    position: fixed;
+    right: 0;
+    margin: auto;
+    width: 320px;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+        -ms-transform: translate3d(0%, 0, 0);
+         -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+}
+
+.modal-right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
+.modal-header .modal-title {
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 35px;
+}
+
+.close{
+    /* margin: 5%; */
+    background: rgba(255, 0, 0, 0);
+    color: #222;
+}
+
+.footer-buttons-modal-cart {
+    min-height: 120px;
+}
+
+
+
+
+
+
+
+
+/* BOTONES */
+
+.btn-pay:hover{
+    background:  rgb(77, 171, 166);
+    border: none;
+}
+
+.btn-cart:hover{
+    background:  rgb(209, 205, 132);
+    border: none;
+}
+
+
