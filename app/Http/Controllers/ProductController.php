@@ -188,17 +188,62 @@ class ProductController extends AppBaseController
         return redirect(route('products.index'));
     }
 
-    public function addToCart($id, UpdateProductRequest $request)
+    public function addToCart(Request $request)
     {
-        $product = $this->productRepository->find($id);
+        //comprobamos el request post
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        if (empty($product)) {
-            Flash::error('Product not found');
+            //inicio de $_SESSION
+            session_start();
 
-            return redirect(route('products.index'));
+            //si el post no contiene id de producto
+            if (!isset($_POST["id_producto"])) {
+                $msg = "error";
+                return $msg;
+            }
+
+            $id = $_POST['id_producto'];
+
+
+            //CONSULTAR EL PRODUCTO
+            $product = $this->productRepository->find($id);
+
+            //SI NO EXISTE
+            if(!$product){
+                $msg = "error";
+                return $msg;
+            }
+
+            //SI NO EXISTE STOCK DE PRODUCTO
+            if ($product['stock'] < 1) {
+                $msg = "error";
+                return $msg;
+            }
+
+
+            $indice = false;
+
+
+            if ($indice === false) {
+
+                $product['cantidad_en_carrito'] = 1;
+
+                $product = json_decode(json_encode($product), true);
+
+                $request->session()->put(['cart' => $product]);
+
+                return $request->session()->all();
+            }
+
+
+            //var_dump($product);die();
+
+        }else{
+            
+            $msg = "error";
+
+            return $msg;
         }
-
-        
     }
 
 }

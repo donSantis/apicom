@@ -48,5 +48,5 @@ Route::resource('brands', App\Http\Controllers\BrandController::class);
 
 Route::resource('cart', App\Http\Controllers\CartController::class);
 
-Route::post('/cart/addToCart', 'CartController@addToCartr');
+Route::post('addToCart', [ProductController::class, 'addToCart'])->name('addToCart');
 

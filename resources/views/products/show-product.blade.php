@@ -18,8 +18,13 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6">
-                   <form method="post" action="/cart/addToCart">
-                       
+                   <form method="post" action="/cart/addToCart" >
+
+                        <input type="hidden" name="title" id="title" value="{{$product->title}}">
+                        <input type="hidden" name="id_producto" id="id_producto" value="{{$product->id}}">
+
+
+
                      <h3 class="my-3">{{$product->title}}</h3>
                     <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
 
@@ -96,7 +101,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <div class="btn btn-primary btn-lg btn-flat">
+                        <div class="btn btn-primary btn-lg btn-flat" id="addToCart">
                             <i class="fas fa-cart-plus fa-lg mr-2"></i>
                             Add to Cart
                         </div>
@@ -145,3 +150,5 @@
         <!-- /.card-body -->
     </div>
 @endsection
+
+

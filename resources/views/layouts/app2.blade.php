@@ -1,3 +1,11 @@
+<?php if(!isset($_SESSION)){
+  
+session_start();
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -5,6 +13,7 @@
 
 <body class=" sidebar-mini layout-fixed">
 <div class="wrapper">
+@include('layouts.carrito.carritomodal')
 @include('layouts.header.navbar')
 
 
@@ -57,23 +66,42 @@
 <script src="{{ asset('js/card-product.js') }}" defer></script>
 
 
-<script>
+<script type="text/javascript">
 
-    $(document).redy(function(){
+        $.ajaxSetup({
 
+        headers: {
 
-        $.ajax({
-            url: url,
-            method: 'POST',
-            data: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 
-            },
-        })
-
-
+        }
 
     });
 
+        //function click para el boton addToCart
+  $( "#addToCart" ).click(function() {
+
+      event.preventDefault();
+      //variable a trabajar
+      var title = $('#title').val();
+      var id_producto = $('#id_producto').val();
+
+      var url = "../addToCart";
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {title: title,id_producto: id_producto,
+                "_token": $("meta[name='csrf-token']").attr("content")},
+                    success:function(response){
+
+                      console.log(Session::get('cart'));
+                      
+                    }
+            });
+
+      
+    });
 
 
     $(function () {

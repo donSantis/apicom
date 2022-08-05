@@ -16,74 +16,23 @@
 
 
       <div class="modal-body">
+
+  
+        <div ata-bs-spy="scroll" class="scrollspy-example h-20" >
+
+          @foreach ( session('cart') as $key )
+
+
+                 
+                <h4 id="list-item-1"> {{ $key }}</h4>
+                <p>...</p>
+
+          @endforeach
         
 
-        <div ata-bs-spy="scroll" class="scrollspy-example h-20" >
-           <h4 id="list-item-1">Item 1</h4>
-  <p>...</p>
-  <h4 id="list-item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="list-item-3">Item 3</h4>
-  <p>...</p>
-  <h4 id="list-item-4">Item 4</h4>
-  <p>...</p>
-   <h4 id="list-item-1">Item 1</h4>
-  <p>...</p>
-  <h4 id="list-item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="list-item-3">Item 3</h4>
-  <p>...</p>
-  <h4 id="list-item-4">Item 4</h4>
-  <p>...</p>
-   <h4 id="list-item-1">Item 1</h4>
-  <p>...</p>
-  <h4 id="list-item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="list-item-3">Item 3</h4>
-  <p>...</p>
-  <h4 id="list-item-4">Item 4</h4>
-  <p>...</p>
-   <h4 id="list-item-1">Item 1</h4>
-  <p>...</p>
-  <h4 id="list-item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="list-item-3">Item 3</h4>
-  <p>...</p>
-  <h4 id="list-item-4">Item 4</h4>
-  <p>...</p>
-   <h4 id="list-item-1">Item 1</h4>
-  <p>...</p>
-  <h4 id="list-item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="list-item-3">Item 3</h4>
-  <p>...</p>
-  <h4 id="list-item-4">Item 4</h4>
-  <p>...</p>
-   <h4 id="list-item-1">Item 1</h4>
-  <p>...</p>
-  <h4 id="list-item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="list-item-3">Item 3</h4>
-  <p>...</p>
-  <h4 id="list-item-4">Item 4</h4>
-  <p>...</p>
-   <h4 id="list-item-1">Item 1</h4>
-  <p>...</p>
-  <h4 id="list-item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="list-item-3">Item 3</h4>
-  <p>...</p>
-  <h4 id="list-item-4">Item 4</h4>
-  <p>...</p>
-   <h4 id="list-item-1">Item 1</h4>
-  <p>...</p>
-  <h4 id="list-item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="list-item-3">Item 3</h4>
-  <p>...</p>
-  <h4 id="list-item-4">Item 4</h4>
-  <p>...</p>
-        </div>
+        
+
+         </div>
 
       </div>
 
