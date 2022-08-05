@@ -188,4 +188,17 @@ class ProductController extends AppBaseController
         return redirect(route('products.index'));
     }
 
+    public function addToCart($id, UpdateProductRequest $request)
+    {
+        $product = $this->productRepository->find($id);
+
+        if (empty($product)) {
+            Flash::error('Product not found');
+
+            return redirect(route('products.index'));
+        }
+
+        
+    }
+
 }

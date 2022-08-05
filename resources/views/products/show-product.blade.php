@@ -18,14 +18,16 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6">
-                    <h3 class="my-3">{{$product->title}}</h3>
+                   <form method="post" action="/cart/addToCart">
+                       
+                     <h3 class="my-3">{{$product->title}}</h3>
                     <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
 
                     <hr>
                     <h4>Available Colors</h4>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-default text-center active">
-                            <input type="radio" name="color_option" id="color_option_a1" autocomplete="off" checked>
+                            <input type="radio" name="color_option" id="color_option_a1" autocomplete="off">
                             Green
                             <br>
                             <i class="fas fa-circle fa-2x text-green"></i>
@@ -119,6 +121,9 @@
                             <i class="fas fa-rss-square fa-2x"></i>
                         </a>
                     </div>
+
+
+                   </form>
 
                 </div>
             </div>
