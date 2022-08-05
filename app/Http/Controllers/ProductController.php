@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Product;
 use App\Repositories\ProductRepository;
 use App\Repositories\CategoryRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
-use Response;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Response;
 
 class ProductController extends AppBaseController
 {
@@ -73,6 +76,78 @@ class ProductController extends AppBaseController
         $input = $request->all();
 
         $product = $this->productRepository->create($input);
+
+        Flash::success('Product saved successfully.');
+
+        return redirect(route('products.index'));
+    }
+
+    public function getImageProduct($filename)
+    {
+        $file = Storage::disk('product')->get($filename);
+        return new Response($file, 200);
+    }
+
+    public function save(Request $request)
+    {
+        $validate = $this->validate($request, [
+            'title' => 'required|string|max:255',
+        ]);
+
+        // Recoger datos del formulario
+        $title = $request->input('title');
+        $idUser = 1;
+        $idCategory = 1;
+        $idColor = 1;
+        $idBrand = 1;
+        $idSize = 1;
+        $idGender = 1;
+        $sku = ' ';
+        $description = ' ';
+        $price = ' ';
+        $stock = ' ';
+        $state = ' ';
+        $image_path = $request->file('image_path');
+
+
+
+
+
+
+
+        $product = new Product();
+
+        if ($image_path) {
+            // Poner nombre unico
+            $image_path_name = time() . $image_path->getClientOriginalName();
+
+            // Guardar en la carpeta storage (storage/app/users)
+            Storage::disk('product')->put($image_path_name, File::get($image_path));
+
+            // Seteo el nombre de la imagen en el objeto
+            $product->image = $image_path_name;
+        }else{
+            $product->image = "sin-imagen";
+        }
+
+
+        $product->title = $title;
+        $product->id_gender = $idGender;
+        $product->id_size = $idSize;
+        $product->description = $description;
+        $product->id_user = $idUser ;
+        $product->id_category = $idCategory ;
+        $product->id_color = $idColor;
+        $product->id_brand = $idBrand ;
+        $product->sku = $sku ;
+        $product->price = $price ;
+        $product->stock = $stock ;
+        $product->state = $state ;
+
+
+
+
+        $product->save();
 
         Flash::success('Product saved successfully.');
 
@@ -186,6 +261,19 @@ class ProductController extends AppBaseController
         Flash::success('Product deleted successfully.');
 
         return redirect(route('products.index'));
+    }
+
+    public function addToCart($id, UpdateProductRequest $request)
+    {
+        $product = $this->productRepository->find($id);
+
+        if (empty($product)) {
+            Flash::error('Product not found');
+
+            return redirect(route('products.index'));
+        }
+
+
     }
 
 }

@@ -17,22 +17,25 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'products.store']) !!}
 
+            <form method="post" action="/save-product" enctype="multipart/form-data">
+                @csrf
             <div class="card-body">
 
                 <div class="row">
-                    @include('products.fields')
+                    @include('products.form-2')
                 </div>
 
             </div>
 
             <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                <button type="submit" class="btn btn-success">
+                    Guardar
+                </button>
                 <a href="{{ route('products.index') }}" class="btn btn-default">Cancel</a>
             </div>
 
-            {!! Form::close() !!}
+            </form>
 
         </div>
     </div>

@@ -59,22 +59,6 @@
 
 <script>
 
-    $(document).redy(function(){
-
-
-        $.ajax({
-            url: url,
-            method: 'POST',
-            data: {
-
-            },
-        })
-
-
-
-    });
-
-
 
     $(function () {
         bsCustomFileInput.init();

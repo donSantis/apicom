@@ -75,7 +75,15 @@
 
 
 <!-- Image Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('image', 'Image:') !!}
-    {!! Form::text('image', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
+<div class="form-group mb-10">
+
+    <label for="image_path"
+           class="col-md-4 col-form-label text-md-right">{{ __('Imagen') }}</label>
+
+    <div class="col-md-7">
+        <input id="image_path" type="file"
+               class="form-control"
+               name="image_path">
+
+    </div>
 </div>
