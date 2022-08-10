@@ -1,4 +1,4 @@
-<?php if(!isset($_SESSION)){
+<?php if(!Session::has('cart')){
   
 session_start();
 
@@ -71,12 +71,12 @@ session_start();
         $.ajaxSetup({
 
         headers: {
-
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-
         }
 
     });
+
+
 
         //function click para el boton addToCart
   $( "#addToCart" ).click(function() {
@@ -88,6 +88,8 @@ session_start();
 
       var url = "../addToCart";
 
+      
+
             $.ajax({
                 type: "POST",
                 url: url,
@@ -95,7 +97,7 @@ session_start();
                 "_token": $("meta[name='csrf-token']").attr("content")},
                     success:function(response){
 
-                      console.log(Session::get('cart'));
+                    console.log(response);
                       
                     }
             });

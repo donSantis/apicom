@@ -20,17 +20,22 @@
   
         <div ata-bs-spy="scroll" class="scrollspy-example h-20" >
 
-          @foreach ( session('cart') as $key )
-
+                @if(session()->has('cart'))
 
                  
-                <h4 id="list-item-1"> {{ $key }}</h4>
-                <p>...</p>
+                      <tr>                    
+                          <td>{{$item->title}}</td>
+                          <td>asd</td>
+                      </tr>  
+                            
 
-          @endforeach
-        
-
-        
+                @else
+                      <tr>                    
+                          <td>No existe carrito</td>
+                      </tr> 
+                @endif             
+     
+  
 
          </div>
 

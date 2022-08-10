@@ -40,6 +40,7 @@ class ProductController extends AppBaseController
 
     public function index2(Request $request)
     {
+
         $products = $this->productRepository->all();
         $products2 = $this->productRepository->all();
         $categories = $this->categoryRepository->all();
@@ -198,6 +199,7 @@ class ProductController extends AppBaseController
 
             //si el post no contiene id de producto
             if (!isset($_POST["id_producto"])) {
+                Flash::success('Product not found.');
                 $msg = "error";
                 return $msg;
             }
@@ -210,12 +212,14 @@ class ProductController extends AppBaseController
 
             //SI NO EXISTE
             if(!$product){
+                Flash::success('Product not found.');
                 $msg = "error";
                 return $msg;
             }
 
             //SI NO EXISTE STOCK DE PRODUCTO
             if ($product['stock'] < 1) {
+                Flash::success('Producto sin stock.');
                 $msg = "error";
                 return $msg;
             }
@@ -230,9 +234,18 @@ class ProductController extends AppBaseController
 
                 $product = json_decode(json_encode($product), true);
 
-                $request->session()->put(['cart' => $product]);
+                $request->session()->put(['cart' => [$product]]);
 
-                return $request->session()->all();
+               
+
+                 //vardumpl laravel   para debugear
+                //dd(session()->get('cart'));
+
+                $sess = (session()->get('cart'));
+
+                //$sess = Session::get('cart');
+
+                return $sess;
             }
 
 
