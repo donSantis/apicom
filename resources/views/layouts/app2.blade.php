@@ -78,17 +78,15 @@ session_start();
 
 
 
-        //function click para el boton addToCart
+   //function click para el boton addToCart
   $( "#addToCart" ).click(function() {
 
       event.preventDefault();
       //variable a trabajar
       var title = $('#title').val();
       var id_producto = $('#id_producto').val();
-
       var url = "../addToCart";
-
-      
+      var sess;
 
             $.ajax({
                 type: "POST",
@@ -98,14 +96,32 @@ session_start();
                     success:function(response){
 
                     console.log(response);
+                
                       
                     }
             });
-
-      
     });
 
+    //function click para el boton menos
+    $(".menos").on('click', function(){
 
+        var idv = this.id.substr(3, 100);
+
+
+        console.log(idv);
+
+    });
+
+    //function click para el boton mas
+    $(".mas").on('click', function(){
+
+        var id_producto = this.id;
+        var url = "../addToCart";
+        var cantidad_en_carrito = $('#cantidad_en_carrito').val();
+
+        });
+
+    
     $(function () {
         bsCustomFileInput.init();
     });

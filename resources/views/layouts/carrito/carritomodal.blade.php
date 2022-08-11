@@ -22,12 +22,49 @@
 
                 @if(session()->has('cart'))
 
-                 
-                      <tr>                    
-                          <td>{{$item->title}}</td>
-                          <td>asd</td>
+                  @foreach ( Session::get('cart.product') as $key => $item )
+                      
+                      <tr>              
+
+                          <input type="hidden" class="idid" name="id_product" id="id_product{{ $key+1 }}" value="{{ $item['id'] }}">    
+
+
+                          <td> {{ $item['title'] }} </td>
+                          <td> {{ $item['id'] }} </td>
+                          <td> <ul style="list-style: none">
+                                  <li>
+                                    sku: {{ $item['sku']}}
+                                  </li>
+                                  <li>
+                                    $ {{ $item['price']}}
+                                  </li>
+
+                                  <li>
+                                    <div class="btn-group">
+
+
+
+                                      <button type="button " class="btn btn-default col-2 menos" id="menos">
+                                        <i class="fas fa-minus"></i>
+                                      </button>
+
+                                      <input class="number cant_vent col-2 text-center"  id="cantidad_en_carrito" name="cantidad_en_carrito" placeholder="" value="{{ $item['cantidad_en_carrito'] }}">
+                                      
+                                      <button type="button" class="btn btn-default col-2 mas" id="mas{{ $item['id'] }}">
+                                        <i class="fas fa-plus"></i>
+                                      </button>
+
+
+                                    </div>
+                                  </li>
+
+
+                               </ul> 
+                          </td>
+
                       </tr>  
-                            
+                  @endforeach             
+
 
                 @else
                       <tr>                    
@@ -44,7 +81,7 @@
 
       <div class="d-grid gap-2 col-12 mx-auto sticky-bottom bg-dark footer-buttons-modal-cart">
         <button type="button" class="verde btn-lg rounded col-12 mb-3 mt-3 btn-pay" data-bs-dismiss="modal"><strong class="text-uppercase color-blanco">Pagar</strong></button>
-        <button type="button" class="palido btn-lg rounded col-12 mb-3 btn-cart"><strong class="text-uppercase">Ver Carrito</strong></button>
+       
       </div>
 
 

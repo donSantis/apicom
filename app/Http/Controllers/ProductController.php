@@ -204,6 +204,7 @@ class ProductController extends AppBaseController
                 return $msg;
             }
 
+            //se guarda el post id_producto hecho en ajax
             $id = $_POST['id_producto'];
 
 
@@ -227,24 +228,23 @@ class ProductController extends AppBaseController
 
             $indice = false;
 
+            
+
 
             if ($indice === false) {
 
+                //crea atributo en el arreglo product indicando la cantidad de productos en el carrito
                 $product['cantidad_en_carrito'] = 1;
 
                 $product = json_decode(json_encode($product), true);
 
-                $request->session()->put(['cart' => [$product]]);
-
-               
+                //crea la session cart.product con el obj  product
+                $request->session()->push('cart.product', $product);
 
                  //vardumpl laravel   para debugear
                 //dd(session()->get('cart'));
 
                 $sess = (session()->get('cart'));
-
-                //$sess = Session::get('cart');
-
                 return $sess;
             }
 
