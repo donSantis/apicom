@@ -50,3 +50,8 @@ Route::resource('cart', App\Http\Controllers\CartController::class);
 
 Route::post('addToCart', [ProductController::class, 'addToCart'])->name('addToCart');
 
+
+
+
+Route::get('/product/image/{filename}', [ProductController::class, 'getImageProduct'])->name('product.image');
+Route::post('save-product', [ProductController::class, 'save'])->name('save-product');

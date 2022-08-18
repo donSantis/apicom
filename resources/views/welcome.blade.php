@@ -8,7 +8,7 @@
 
     </div>
 
-    @include('carouseles.products3')
+    @include('carouseles.products4')
 
 
     <div class="azul py-5" style="height: 500px">
@@ -23,5 +23,7 @@
     <div class="palido py-5" style="height: 500px">
 
     </div>
+
+    
 <h1 class="rojo">tienda</h1>
 @endsection
