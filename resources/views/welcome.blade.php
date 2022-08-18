@@ -8,7 +8,6 @@
 
     </div>
 
-    @include('carouseles.products3')
 
 
     <div class="azul py-5" style="height: 500px">
@@ -20,6 +19,11 @@
 
     </div>
 
+    <div class="palido py-5" style="height: 500px">
+
+    </div>
+
+    @include('carouseles.products3')
     <div class="palido py-5" style="height: 500px">
 
     </div>

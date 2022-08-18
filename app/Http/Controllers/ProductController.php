@@ -109,12 +109,6 @@ class ProductController extends AppBaseController
         $state = ' ';
         $image_path = $request->file('image_path');
 
-
-
-
-
-
-
         $product = new Product();
 
         if ($image_path) {
@@ -144,14 +138,11 @@ class ProductController extends AppBaseController
         $product->stock = $stock ;
         $product->state = $state ;
 
-
-
-
         $product->save();
 
         Flash::success('Product saved successfully.');
 
-        return redirect(route('products.index'));
+        return redirect(route('home'));
     }
 
     /**
